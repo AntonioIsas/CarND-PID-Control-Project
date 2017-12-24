@@ -8,10 +8,10 @@ ___Describe the effect each of the P, I, D components had in your implementation
 
 _Proportional:_  The proportional component of the PID is in charge of steering the car in proportion to the CTE which in this case is the distance from the center of the lane, the farther away it is the harder it will turn, the problem of using this value alone is it will overshoot and then it will start oscillating.
 
-_Integral:_  This component will reduce any existing bias in the car it is calculated as the sum of the CTE over time, in this particular case it can be noticed in the curves as they drive smoother when we add this value 
+_Integral:_  This component will reduce any existing bias in the car it is calculated as the sum of the CTE over time, in this particular case it can be noticed in the curves as they drive smoother when we add this value
 
 _Differential:_  
-This is the temporal derivative of the CTE, it notices the car is approaching the CTE so it counter steers reducing the approach and preventing the overshooting from the Proportional control, this derivative is calculates as `CTE<sub>t</sub> - CTE<sub>t-1</sub>`
+This is the temporal derivative of the CTE, it notices the car is approaching the CTE so it counter steers reducing the approach and preventing the overshooting from the Proportional control, this derivative is calculates as `CTE - previousCTE`
 
 ___Describe how the final hyperparameters were chosen.___<br>
 The parameters were chosen manually by trial and error, to facilitate this and make it faster, the values where sent as arguments to the program
