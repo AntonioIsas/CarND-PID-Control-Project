@@ -4,7 +4,7 @@ Self-Driving Car Engineer Nanodegree Program
 ---
 ## Reflection
 
-___ Describe the effect each of the P, I, D components had in your implementation. ___<br>
+**_Describe the effect each of the P, I, D components had in your implementation._**<br>
 
 _Proportional:_  The proportional component of the PID is in charge of steering the car in proportion to the CTE which in this case is the distance from the center of the lane, the farther away it is the harder it will turn, the problem of using this value alone is it will overshoot and then it will start oscillating.
 
@@ -13,7 +13,7 @@ _Integral:_  This component will reduce any existing bias in the car it is calcu
 _Differential:_  
 This is the temporal derivative of the CTE, it notices the car is approaching the CTE so it counter steers reducing the approach and preventing the overshooting from the Proportional control, this derivative is calculates as `CTE - previousCTE`
 
-___ Describe how the final hyperparameters were chosen. ___<br>
+**_Describe how the final hyperparameters were chosen._**<br>
 The parameters were chosen manually by trial and error, to facilitate this and make it faster, the values where sent as arguments to the program
 
 ## Dependencies
