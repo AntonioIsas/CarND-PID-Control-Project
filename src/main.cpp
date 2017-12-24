@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
   PID pid;
   // TODO: Initialize the pid variable.
   // Values manually tunned
-  pid.Init(.09,0,1.3);
+  pid.Init(.09,0.001,1.3);
   //pid.Init(atof(argv[1]),atof(argv[2]),atof(argv[3]));
 
   h.onMessage([&](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode) {
@@ -68,7 +68,7 @@ int main(int argc, char *argv[]){
 
           json msgJson;
           msgJson["steering_angle"] = steer_value;
-          msgJson["throttle"] = .6;
+          msgJson["throttle"] = .4;
           auto msg = "42[\"steer\"," + msgJson.dump() + "]";
           std::cout << msg << std::endl;
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
